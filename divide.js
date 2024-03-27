@@ -1,0 +1,1 @@
+exports.divide = function (b) {};

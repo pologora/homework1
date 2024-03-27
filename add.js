@@ -12,13 +12,14 @@ function addZero(a, b) {
   return [a, b];
 }
 
-export function add(a, b) {
-  [a, b] = addZero(a, b);
+exports.add = function (b) {
+  const [str1, str2] = addZero(this, b);
+
   let result = '';
   let remember = 0;
 
-  for (let i = a.length - 1; i >= 0; i--) {
-    let sum = Number(a[i]) + Number(b[i]) + remember;
+  for (let i = str1.length - 1; i >= 0; i--) {
+    let sum = Number(str1[i]) + Number(str2[i]) + remember;
 
     if (sum >= 10) {
       remember = 1;
@@ -35,4 +36,4 @@ export function add(a, b) {
   }
 
   return result;
-}
+};

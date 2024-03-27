@@ -1,0 +1,1 @@
+exports.multiply = function (b) {};
