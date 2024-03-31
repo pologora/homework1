@@ -1,18 +1,6 @@
-function addZero(a, b) {
-  if (a.length > b.length) {
-    while (a.length > b.length) {
-      b = '0' + b;
-    }
-  } else if (b.length > a.length) {
-    while (b.length > a.length) {
-      a = '0' + a;
-    }
-  }
+const { addZero } = require('./helpers');
 
-  return [a, b];
-}
-
-exports.add = function (b) {
+exports.add = function add(b) {
   const [str1, str2] = addZero(this, b);
 
   let result = '';
