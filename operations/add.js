@@ -1,4 +1,4 @@
-const { addZero } = require('./helpers');
+const { addZero } = require('../helpers/helpers');
 
 exports.add = function add(b) {
   const [str1, str2] = addZero(this, b);

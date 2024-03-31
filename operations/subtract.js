@@ -1,4 +1,4 @@
-const { addZero } = require('./helpers');
+const { addZero } = require('../helpers/helpers');
 
 exports.subtract = function subtract(str2) {
   const [a, b] = addZero(this, str2);
