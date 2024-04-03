@@ -9,8 +9,8 @@ exports.multiply = function multiply(str2) {
 
   for (let i = len1 - 1; i >= 0; i--) {
     for (let j = len2 - 1; j >= 0; j--) {
-      const product = Number(this[i]) * Number(str2[j]);
-      const sum = product + result[i + j + 1];
+      const multiply = Number(this[i]) * Number(str2[j]);
+      const sum = multiply + result[i + j + 1];
 
       result[i + j] += Math.floor(sum / 10);
       result[i + j + 1] = sum % 10;
