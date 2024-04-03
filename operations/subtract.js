@@ -1,6 +1,11 @@
-const { addZero } = require('../helpers/helpers');
+const { addZero, removeZeroAtStart } = require('../helpers/helpers');
+require('../app.js');
 
 exports.subtract = function subtract(str2) {
+  if (!this.isBiggerOrEq(str2)) {
+    throw new Error('First number should be bigger than second!');
+  }
+
   const [a, b] = addZero(this, str2);
 
   let result = '';
@@ -22,5 +27,5 @@ exports.subtract = function subtract(str2) {
     result = subtract + result;
   }
 
-  return result;
+  return removeZeroAtStart(result);
 };
