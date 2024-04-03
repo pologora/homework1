@@ -1,18 +1,33 @@
+const { removeZeroAtStart } = require('../helpers/helpers.js');
+
 require('../app.js');
 
-exports.divide = function divide(b) {
-  if (b == 0) {
-    throw new Error(`Don't do that! You can't divide by 0`);
+exports.divide = function divide(divisor) {
+  if (removeZeroAtStart(divisor) == 0) {
+    throw new Error('Dont divide by 0');
   }
 
-  let quotient = '0';
-  let dividend = this;
-  let divisor = b;
+  const dividend = this;
+  let quotient = '';
+  let tempDividend = '';
+  let product = '0';
 
-  while (dividend.isBiggerOrEq(divisor)) {
-    dividend = dividend.minus(divisor);
-    quotient = quotient.plus('1');
+  for (let i = 0; i < dividend.length; i++) {
+    tempDividend = tempDividend + dividend[i];
+    let tempDivisor = divisor;
+
+    if (tempDividend.isBiggerOrEq(divisor)) {
+      while (tempDividend.isBiggerOrEq(tempDivisor)) {
+        product = product.plus('1');
+        tempDivisor = tempDivisor.plus(divisor);
+      }
+
+      tempDividend = tempDividend.minus(divisor.multiply(product));
+    }
+
+    quotient += product;
+    product = '0';
   }
 
-  return quotient;
+  return removeZeroAtStart(quotient);
 };

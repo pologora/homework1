@@ -29,6 +29,21 @@ function isBiggerOrEq(str2) {
   return true;
 }
 
+function isSmallerThan(str2) {
+  const [a, b] = addZero(this, str2);
+
+  for (let i = 0; i < a.length; i++) {
+    num1 = a[i];
+    num2 = b[i];
+
+    if (num1 < num2) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 function removeZeroAtStart(str) {
   let num = str;
   let zero = num[0];
@@ -45,4 +60,4 @@ function removeZeroAtStart(str) {
   return num;
 }
 
-module.exports = { addZero, isBiggerOrEq, removeZeroAtStart };
+module.exports = { addZero, isBiggerOrEq, removeZeroAtStart, isSmallerThan };
