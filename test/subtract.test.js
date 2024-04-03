@@ -23,4 +23,7 @@ describe('Subtract two integers', () => {
       BigInt(bigIntString5) - BigInt(bigIntString6)
     );
   });
+  test('should return 0 if subtract the same number', () => {
+    expect(bigIntString5.minus(bigIntString5)).toBe('0');
+  });
 });

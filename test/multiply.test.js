@@ -16,4 +16,10 @@ describe('Multiply two numbers', () => {
       BigInt(bigIntString3) * BigInt(bigIntString4)
     );
   });
+  test('should return 0 if one of the numbers is 0', () => {
+    expect(bigIntString3.multiply('0')).toBe('0');
+  });
+  test('should return 0 if two numbers are zero ', () => {
+    expect(bigIntString3.multiply('0')).toBe('0');
+  });
 });

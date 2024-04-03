@@ -30,7 +30,19 @@ function isBiggerOrEq(str2) {
 }
 
 function removeZeroAtStart(str) {
-  return str.replace(/^0+/, '');
+  let num = str;
+  let zero = num[0];
+
+  while (zero == 0) {
+    if (num[1] != null) {
+      num = num.slice(1);
+      zero = num[0];
+    } else {
+      return num;
+    }
+  }
+
+  return num;
 }
 
 module.exports = { addZero, isBiggerOrEq, removeZeroAtStart };
